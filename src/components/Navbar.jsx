@@ -7,7 +7,7 @@ const Navbar = () => {
     const {user} = useContext(AuthContext);
     return (
         <div className='flex justify-between'>
-            <div className=''>{user.name}</div>
+            <div className=''>{user && user.name}</div>
             <div className='nav space-x-5 items-center'>
                 <Link to="/">Home</Link>
                 <Link to="/career">Career</Link>
