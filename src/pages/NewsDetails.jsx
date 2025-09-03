@@ -5,7 +5,8 @@ import RightNav from "../components/layout-component/RightNav";
 const NewsDetails = () => {
     const data = useLoaderData();
     const news = data.data[0];
-    console.log(news);
+    // console.log(news);
+    
     // const data = useLoaderData();
 
     // Check if data exists and has the expected structure
