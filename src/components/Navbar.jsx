@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
     return (
         <div className='flex justify-between'>
             <div className=''>{user && user.name}</div>
@@ -17,7 +17,13 @@ const Navbar = () => {
                 <div>
                     <img src={userIcon} alt="" />
                 </div>
-                <Link to="/auth/login" className='btn btn-neutral'>Login</Link>
+                {
+                    user && user?.email ?
+                    (<button onClick={logOut} className='btn btn-neutral'>Logout</button>)
+                    :
+                    (<Link to="/auth/login" className='btn btn-neutral'>Login</Link>)
+                }
+                
             </div>
         </div>
     );
